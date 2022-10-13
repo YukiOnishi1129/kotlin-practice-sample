@@ -18,9 +18,11 @@ fun main() {
 //
 //    displayMessage("メッセージ")
 
-    ifExample(100)
+//    ifExample(100)
+//
+//    whenExample(200)
 
-    whenExample(200)
+    forExample()
 }
 
 // 関数
@@ -53,5 +55,30 @@ fun whenExample(num: Int) {
         else -> {
             println("Undefined value")
         }
+    }
+}
+
+fun whileExample() {
+    var i = 1
+    while(i < 10) {
+        println("i is $i")
+        i++
+    }
+}
+
+fun forExample( ) {
+//    var i = 1
+//    for (i in 1..10){
+//        println("i is $i")
+//    }
+    // stepで指定した数ごと数値を増やす
+//    for (i in 1 until 10 step 2) {
+//        println("i is $i")
+//    }
+
+    val list = listOf<Int>(1,2,5,6,10)
+    // コレクションを展開する方法
+    for (i in list) {
+        println("i is $i")
     }
 }
