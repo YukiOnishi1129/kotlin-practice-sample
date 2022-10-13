@@ -39,7 +39,9 @@ fun main() {
 //    val greeter = GreeterImpl()
 //    greeter.hello()
 
-    listExample()
+//    listExample()
+
+    mapExample()
 }
 
 // 関数
@@ -188,4 +190,33 @@ fun listExample() {
     val mutableList:MutableList<Int> = mutableListOf(1,2,3)
     mutableList.add(4)
     println(mutableList)
+}
+
+// Map
+fun mapExample() {
+    // 「mapOf」関数を使用して、key to value の形式で指定する
+//    　Map型のインスタンスを生成できる
+    val map: Map<Int, String> = mapOf(1 to "one", 2 to "two", 3 to "three")
+    println(map)
+    println(map[2])
+
+    // containsKey: keyの値を引数に指定することで、keyに該当する要素が存在するか？をbooleanの値で返却する
+    println(map.containsKey(3))
+    println(map.containsKey(4))
+
+    // Mapは不可変のオブジェクトになる
+//    要素を追加するには
+    // 「mutableMapOf」関数を使用して、MutableMap型のインスタンスを生成する
+    val immutableMap: Map<Int, String> = mapOf(1 to "one", 2 to "two", 3 to "three")
+//    immutableMap[4] = "four" コンパイルエラー
+    val mutableMap: MutableMap<Int, String> = mutableMapOf(1 to "one", 2 to "two", 3 to "three")
+    mutableMap[4] = "four"
+    println(mutableMap)
+}
+
+
+// Set
+fun setExample() {
+    val set = setOf("one", "two", "three")
+    println(set)
 }
