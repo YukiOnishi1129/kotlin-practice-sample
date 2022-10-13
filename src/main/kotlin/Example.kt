@@ -96,7 +96,7 @@ fun forExample( ) {
 //}
 
 // コンストラクタつきのクラス
-class Human(val name: String) {
+class Human(private val name: String) {
     fun showName() {
         println(name)
     }
