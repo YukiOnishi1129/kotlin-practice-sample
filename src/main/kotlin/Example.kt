@@ -36,8 +36,10 @@ fun main() {
 //    val ios = IosPlatform
 //    ios.showName()
 
-    val greeter = GreeterImpl()
-    greeter.hello()
+//    val greeter = GreeterImpl()
+//    greeter.hello()
+
+    listExample()
 }
 
 // 関数
@@ -158,4 +160,32 @@ class GreeterImpl: Greeter {
     override fun hello() {
         println("hello")
     }
+}
+
+
+// コレクション
+// List
+// Map
+// Set
+
+
+//List
+fun listExample() {
+    // listOf関数に型を指定することで、List型のインスタンスが生成できる
+    val intList: List<Int> = listOf<Int>(1,2,3)
+    println(intList)
+    println(intList[1])
+
+    val stringList: List<String> = listOf<String>("one", "two", "three")
+    println(stringList)
+    println(stringList[1])
+
+    // 要素を追加したい場合
+    // 「MutableList」型のインスタンスを作成する
+    // 「mutableListOf」を使用する
+    val immutableList:List<Int> = listOf(1,2,3)
+//    immutableList.add(4) コンパイルエラーになる
+    val mutableList:MutableList<Int> = mutableListOf(1,2,3)
+    mutableList.add(4)
+    println(mutableList)
 }
