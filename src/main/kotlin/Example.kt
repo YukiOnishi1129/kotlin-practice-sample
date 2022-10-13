@@ -25,8 +25,11 @@ fun main() {
 //    forExample()
 
 
-    val human = Human("Takenaka")
-    human.showName()
+//    val human = Human("Takenaka")
+//    human.showName()
+
+    val dog = Dog("ぽち")
+    dog.cries()
 }
 
 // 関数
@@ -100,4 +103,21 @@ class Human(private val name: String) {
     fun showName() {
         println(name)
     }
+}
+
+//継承
+// 継承させたいクラスには「open」修飾子をつける
+// これがないと継承させようとした際にコンパイルエラーになる
+open class Animal(private val name: String) {
+    fun showName() = println("name is $name")
+
+    // オーバーライドさせたい関数にも「open」をつけておく
+    open fun cries() = println("")
+}
+
+// 継承する際はクラスの後ろに「:クラス名」の記述にする
+class Dog(name: String) : Animal(name) {
+
+    // オーバーライドする関数は「override」修飾子をつける
+    override fun cries() = println("bowwow")
 }
