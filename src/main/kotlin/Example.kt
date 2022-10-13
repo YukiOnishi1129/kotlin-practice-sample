@@ -14,9 +14,13 @@ fun main() {
 //    println(id)
 //    println(name)
 
-    println(countLength("yyyy"))
+//    println(countLength("yyyy"))
+//
+//    displayMessage("メッセージ")
 
-    displayMessage("メッセージ")
+    ifExample(100)
+
+    whenExample(200)
 }
 
 // 関数
@@ -28,4 +32,26 @@ fun countLength(str:String): Int {
 // 戻り値の型は省略可能
 fun displayMessage(message: String): Unit {
     println(message)
+}
+
+// if分岐
+fun ifExample(num: Int) {
+    if(num == 100) {
+        println("num is 100")
+    }
+}
+
+// when文: switch文、case文といったようなもの
+fun whenExample(num: Int) {
+    when(num) {
+        100 -> {
+            println("Equal to 100")
+        }
+        200 -> {
+            println("Equal to 200")
+        }
+        else -> {
+            println("Undefined value")
+        }
+    }
 }
