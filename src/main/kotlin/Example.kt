@@ -28,8 +28,13 @@ fun main() {
 //    val human = Human("Takenaka")
 //    human.showName()
 
-    val dog = Dog("ぽち")
-    dog.cries()
+//    val dog = Dog("ぽち")
+//    dog.cries()
+
+    val android = AndroidPlatform
+    android.showName()
+    val ios = IosPlatform
+    ios.showName()
 }
 
 // 関数
@@ -120,4 +125,23 @@ class Dog(name: String) : Animal(name) {
 
     // オーバーライドする関数は「override」修飾子をつける
     override fun cries() = println("bowwow")
+}
+
+
+// シールドクラス: 継承する対象が制限されたクラス
+// クラス名に「sealed」をつける
+sealed class Platform {
+    abstract fun showName()
+}
+
+object AndroidPlatform : Platform() {
+    override fun showName() {
+        println("Android")
+    }
+}
+
+object IosPlatform : Platform() {
+    override fun showName() {
+        println("iOS")
+    }
 }
