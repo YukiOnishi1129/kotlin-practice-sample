@@ -31,10 +31,13 @@ fun main() {
 //    val dog = Dog("ぽち")
 //    dog.cries()
 
-    val android = AndroidPlatform
-    android.showName()
-    val ios = IosPlatform
-    ios.showName()
+//    val android = AndroidPlatform
+//    android.showName()
+//    val ios = IosPlatform
+//    ios.showName()
+
+    val greeter = GreeterImpl()
+    greeter.hello()
 }
 
 // 関数
@@ -143,5 +146,16 @@ object AndroidPlatform : Platform() {
 object IosPlatform : Platform() {
     override fun showName() {
         println("iOS")
+    }
+}
+
+// インターフェース
+interface Greeter {
+    fun hello()
+}
+
+class GreeterImpl: Greeter {
+    override fun hello() {
+        println("hello")
     }
 }
