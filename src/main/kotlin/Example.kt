@@ -41,7 +41,9 @@ fun main() {
 
 //    listExample()
 
-    mapExample()
+//    mapExample()
+
+    setExample()
 }
 
 // 関数
@@ -217,6 +219,17 @@ fun mapExample() {
 
 // Set
 fun setExample() {
+    // 「setOf」関数を使用することで、Set型のインスタンスを生成できる
     val set = setOf("one", "two", "three")
     println(set)
+    // contains関数で、値があるかをbooleanの値で確認できる
+    println(set.contains("three"))
+    println(set.contains("four"))
+
+    val immutableSet = setOf("one", "two", "three")
+//    immutableSet.add("four") コンパイルエラー
+    val mutableSet = mutableSetOf("one", "two", "three")
+    mutableSet.add("four")
+    println(mutableSet)
+
 }
