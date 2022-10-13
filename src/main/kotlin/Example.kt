@@ -22,7 +22,11 @@ fun main() {
 //
 //    whenExample(200)
 
-    forExample()
+//    forExample()
+
+
+    val human = Human("Takenaka")
+    human.showName()
 }
 
 // 関数
@@ -80,5 +84,20 @@ fun forExample( ) {
     // コレクションを展開する方法
     for (i in list) {
         println("i is $i")
+    }
+}
+
+
+//クラス
+//class Human {
+//    fun showName(name: String) {
+//        println(name)
+//    }
+//}
+
+// コンストラクタつきのクラス
+class Human(val name: String) {
+    fun showName() {
+        println(name)
     }
 }
